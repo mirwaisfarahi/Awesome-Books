@@ -1,67 +1,77 @@
-// Book Class to initiate a book object for the book details
-class Book {
-    constructor(title, author) {
-        this.title = title;
-        this.author = author;
-    }
-}
 
 // Operations Class will be used to add and remove book
 class Operations {
-    
-    // display book
-    static display() {
+  // get local storage data
+  static getData() {
+    return JSON.parse(localStorage.getItem('books'));
+  }
 
-        let books = JSON.parse(localStorage.getItem('books'));
-        const bookList = document.querySelector('#booksList');
+  // set local storage data
+  static setData(books) {
+    localStorage.setItem('books', JSON.stringify(books));
+  }
 
-        for(let book in books) {
-            const tr = document.createElement('tr');
+  // reload the page
+  static reloadPage() {
+    window.location.reload();
+    return false;
+  }
 
-            tr.innerHTML =
-                `<td>${books[book].title}</td>
+  // Remove book
+  static remove(index) {
+    const books = this.getData();
+    books.splice(index, 1);
+    this.setData(books);
+    this.reloadPage();
+  }
+
+  // display book
+  static display() {
+    const books = this.getData();
+    const bookList = document.querySelector('#booksList');
+
+    for (const book in books) {
+      const tr = document.createElement('tr');
+
+      tr.innerHTML = `<td>${books[book].title}</td>
                 <td>${books[book].author}</td>
-                <td><a href="#">Delete</a></td>
+                <td><button class = "remove-book">Delete</a></td>
                 `;
-                bookList.appendChild(tr);
-        }
+      bookList.appendChild(tr);
     }
 
-    // Remove book
-    // static remove(book) {
-    //     console.log(book)
-    // }
+    const removeBook = document.querySelectorAll('.remove-book');
+    removeBook.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        this.remove(index);
+      });
+    });
+  }
 
-    // Add Book
-    static add(title, author) {
-        let existingBooks = JSON.parse(localStorage.getItem("books"));
-        if (existingBooks == null) existingBooks = [];
-        
-        const book = new Book(title, author);
-        // localStorage.setItem('book', JSON.stringify(book));
+  // Add Book
+  static add(bookTitle, bookAuthor) {
+    let existingBooks = this.getData();
+    if (existingBooks == null) existingBooks = [];
 
-        // Save allBooks back to local storage
-        existingBooks.push(book);
-        localStorage.setItem("books", JSON.stringify(existingBooks));
+    const book = { title: bookTitle, author: bookAuthor };
 
-        // this.display();
-    }
+    // Save allBooks back to local storage
+    existingBooks.push(book);
+    this.setData(existingBooks);
+    this.reloadPage();
+  }
 }
 
 // Event to display books
- document.addEventListener('Content', Operations.display());
+document.addEventListener('Content', Operations.display());
 
+// get form data to add it
 const bookForm = document.querySelector('#bookForm');
+bookForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-bookForm.addEventListener('submit', function (e) {
-    
-    e.preventDefault();
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
 
-    const title = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
-    Operations.add(title, author);
+  Operations.add(title, author);
 });
-
-bookForm.addEventListener('event', function(e) {
-    console.log(e.target);
-})
