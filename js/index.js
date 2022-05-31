@@ -23,13 +23,15 @@ const display = function () {
   const books = getData();
   const bookList = document.querySelector('#booksList');
 
-  for (let book = 0; book < books.length; book += 1) {
-    const tr = document.createElement('tr');
+  if (books) {
+    for (let book = 0; book < books.length; book += 1) {
+      const tr = document.createElement('tr');
 
-    tr.innerHTML = `<td>${books[book].title} by ${books[book].author}</td>
-                <td><button class = "remove-book">Delete</a></td>
-                `;
-    bookList.appendChild(tr);
+      tr.innerHTML = `<td>${books[book].title} by ${books[book].author}</td>
+                  <td><button class = "remove-book">Delete</a></td>
+                  `;
+      bookList.appendChild(tr);
+    }
   }
 
   const removeBook = document.querySelectorAll('.remove-book');
