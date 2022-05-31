@@ -21,7 +21,7 @@ class Operations {
             tr.innerHTML =
                 `<td>${books[book].title}</td>
                 <td>${books[book].author}</td>
-                <td><a href="${books[book]}">Delete</a></td>
+                <td><a href="#">Delete</a></td>
                 `;
                 bookList.appendChild(tr);
         }
