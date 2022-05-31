@@ -1,39 +1,33 @@
-// Operations Class will be used to add and remove book
-class Operations {
-  // get local storage data
-  static getData() {
-    return JSON.parse(localStorage.getItem('books'));
-  }
 
+  // get local storage data
+  const getData = () => JSON.parse(localStorage.getItem('books'));
+  
   // set local storage data
-  static setData(books) {
-    localStorage.setItem('books', JSON.stringify(books));
-  }
+  const setData = (books) => localStorage.setItem('books', JSON.stringify(books));
 
   // reload the page
-  static reloadPage() {
+  const reloadPage = function() {
     window.location.reload();
     return false;
   }
 
   // Remove book
-  static remove(index) {
-    const books = this.getData();
+  const remove = function(index) {
+    const books = getData();
     books.splice(index, 1);
-    this.setData(books);
-    this.reloadPage();
+    setData(books);
+    reloadPage();
   }
 
   // display book
-  static display() {
-    const books = this.getData();
+  const display = function() {
+    const books = getData();
     const bookList = document.querySelector('#booksList');
 
-    for (const book in books) {
+    for (let book = 0; book < books.length; book += 1) {
       const tr = document.createElement('tr');
 
-      tr.innerHTML = `<td>${books[book].title}</td>
-                <td>${books[book].author}</td>
+      tr.innerHTML = `<td>${books[book].title} by ${books[book].author}</td>
                 <td><button class = "remove-book">Delete</a></td>
                 `;
       bookList.appendChild(tr);
@@ -42,27 +36,26 @@ class Operations {
     const removeBook = document.querySelectorAll('.remove-book');
     removeBook.forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        this.remove(index);
+        remove(index);
       });
     });
   }
 
   // Add Book
-  static add(bookTitle, bookAuthor) {
-    let existingBooks = this.getData();
+  const add = function(bookTitle, bookAuthor) {
+    let existingBooks = getData();
     if (existingBooks == null) existingBooks = [];
 
     const book = { title: bookTitle, author: bookAuthor };
 
     // Save allBooks back to local storage
     existingBooks.push(book);
-    this.setData(existingBooks);
-    this.reloadPage();
+    setData(existingBooks);
+    reloadPage();
   }
-}
 
 // Event to display books
-document.addEventListener('Content', Operations.display());
+document.addEventListener('Content', display());
 
 // get form data to add it
 const bookForm = document.querySelector('#bookForm');
@@ -72,5 +65,5 @@ bookForm.addEventListener('submit', (e) => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
 
-  Operations.add(title, author);
+  add(title, author);
 });
