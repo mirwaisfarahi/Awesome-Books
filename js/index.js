@@ -1,4 +1,3 @@
-
 // Operations Class will be used to add and remove book
 class Operations {
   // get local storage data
