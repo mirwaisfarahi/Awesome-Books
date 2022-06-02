@@ -14,12 +14,12 @@
 
         <header>
             <nav>
-                <a href="./index.html">
+                <a href="#book-list">
                     <h1 class="title">All Awesome Books</h1>
                 </a>
                 <ul class="nav-items">
-                    <a href="./index.html" class="nav-link list-btn">
-                        <li>List |&nbsp;</li>
+                    <a href="#book-list" class="nav-link">
+                        <li class="list-btn">List |&nbsp;</li>
                     </a>
                     <a href="#addBook" class="nav-link add-btn">
                         <li>Add new |&nbsp;</li>
@@ -31,23 +31,23 @@
 
             </nav>
         </header>
-        <h2>Book List</h1>
+        <h2 class="list-heading">Book List</h1>
 
-            <div id="book-list">
+            <div id="book-list" class="booklist">
                 <ul id="booksList">
                 </ul>
             </div>
 
-            <div id="#addBook">
-                <h2 class="title">Add a new book</h2>
-                <form action="#" method="POST" id="add-book">
+            <div class="add-book" id="#addBook">
+                <h2 class="title add-book-heading">Add a new book</h2>
+                <form action="#" method="POST" id="add-book" class="add-book-form">
                     <input type="text" name="title" id="title" placeholder="Title">
                     <input type="text" name="author" id="author" placeholder="Author">
                     <button type="submit">Add</button>
                 </form>
             </div>
 
-            <section class="contact-section" d="#contactSection">
+            <section class="contact-section" id="#contactSection">
                 <h1>Contact Information</h1>
                 <p>Do you have a question or you just want to say "Hello"?</p>
                 <ul>

@@ -84,6 +84,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 #add-book input {
@@ -129,8 +130,9 @@ h3 span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none;
 }
 
-.hide {
+.add-book-heading {
   display: none;
 }
