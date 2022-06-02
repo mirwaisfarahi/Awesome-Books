@@ -13,24 +13,55 @@
     <main id="wrapper">
 
         <header>
-            <h1 class="title">All Awesome Books</h1>
+            <nav>
+                <a href="./index.html">
+                    <h1 class="title">All Awesome Books</h1>
+                </a>
+                <ul class="nav-items">
+                    <a href="./index.html" class="nav-link">
+                        <li>List |&nbsp;</li>
+                    </a>
+                    <a href="#addBook" class="nav-link">
+                        <li>Add new |&nbsp;</li>
+                    </a>
+                    <a href="#contactSection" class="nav-link">
+                        <li>Contact</li>
+                    </a>
+                </ul>
+
+            </nav>
         </header>
+        <h2>Book List</h1>
 
-        <div id="book-list">
-            <ul id="booksList">
-            </ul>
-        </div>
+            <div id="book-list">
+                <ul id="booksList">
+                </ul>
+            </div>
 
-        <div>
-            <h2 class="title">Add a new book</h2>
-            <form action="#" method="POST" id="add-book">
-                <input type="text" name="title" id="title" placeholder="Title">
-                <input type="text" name="author" id="author" placeholder="Author">
-                <button type="submit">Add</button>
-            </form>
-        </div>
+            <div id="#addBook">
+                <h2 class="title">Add a new book</h2>
+                <form action="#" method="POST" id="add-book">
+                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="author" id="author" placeholder="Author">
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+
+            <section class="contact-section" d="#contactSection">
+                <h1>Contact Information</h1>
+                <p>Do you have a question or you just want to say "Hello"?</p>
+                <ul>
+                    <li>Our e-mail: mail@mail.com</li>
+                    <li>Our Phone Number: +00 1800 123 1234</li>
+                    <li>Our Address: St 21, 45721, Montana</li>
+                </ul>
+            </section>
 
     </main>
+
+    <footer>
+        <h3>Copyright <span>@ Mirwais Farahi | Sam</span></h3>
+    </footer>
 
     <script src="js/index.js"></script>
 </body>
