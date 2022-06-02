@@ -6,31 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Awesome Bookss | Mirwais Farahi</title>
+    <title>Awesome Books</title>
 </head>
 
 <body>
+
+    <header>
+        <nav>
+            <a href="#book-list" class="logo">Awesome Books</a>
+            <ul class="nav-items">
+                <li><a href="#book-list" class="nav-link list-btn">List |&nbsp;</a></li>
+                <li><a href="#addBook" class="nav-link add-btn">Add new |&nbsp;</a></li>
+                <li><a href="#contactSection" class="nav-link contact-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <span class="date"></span>
+
     <main id="wrapper">
+        <h2 class="list-heading">All Awesome Books</h2>
 
-        <header>
-            <h1 class="title">All Awesome Books</h1>
-        </header>
-
-        <div id="book-list">
+        <div id="book-list" class="booklist">
             <ul id="booksList">
             </ul>
         </div>
 
-        <div>
-            <h2 class="title">Add a new book</h2>
-            <form action="#" method="POST" id="add-book">
+        <div class="add-book" id="#addBook">
+            <h2 class="title add-book-heading">Add a new book</h2>
+            <form action="#" method="POST" id="add-book" class="add-book-form">
                 <input type="text" name="title" id="title" placeholder="Title">
                 <input type="text" name="author" id="author" placeholder="Author">
                 <button type="submit">Add</button>
             </form>
         </div>
 
+        <section class="contact-section" id="#contactSection">
+            <h1>Contact Information</h1>
+            <p>Do you have a question or you just want to say "Hello"?</p>
+            <ul>
+                <li>Our e-mail: mail@mail.com</li>
+                <li>Our Phone Number: +00 1800 123 1234</li>
+                <li>Our Address: St 21, 45721, Montana</li>
+            </ul>
+        </section>
+
     </main>
+
+    <footer>
+        <h3>All copyrights are reserved.</h3>
+    </footer>
 
     <script src="js/index.js"></script>
 </body>

@@ -47,6 +47,10 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@githubhandle](https://github.com/mirwaisfarahi)
 - Twitter: [@twitterhandle](https://twitter.com/farahi92)
 
+👤 **Sam Felice**
+
+- GitHub: [@githubhandle](https://github.com/samWfelice)
+
 
 ## 🤝 Contributing
 
