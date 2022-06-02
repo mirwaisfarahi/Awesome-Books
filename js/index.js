@@ -123,6 +123,6 @@ homeBtn.addEventListener('click', () => {
   document.querySelector('.contact-section').style.display = 'none';
 });
 
-//Display date method
+// Display date method
 const today = new Date();
 document.querySelector('.date').innerHTML = today;
