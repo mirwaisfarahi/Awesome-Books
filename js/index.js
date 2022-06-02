@@ -125,4 +125,5 @@ homeBtn.addEventListener('click', () => {
 
 // Display date method
 const today = new Date();
-document.querySelector('.date').innerHTML = today;
+const dateTime = document.querySelector('.date');
+dateTime.innerHTML = today;
