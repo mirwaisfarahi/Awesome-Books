@@ -84,3 +84,8 @@ bookForm.addEventListener('submit', (e) => {
 
   Methods.add(title, author);
 });
+
+// Function to Hide sections 
+const listBtn= document.querySelector('.list-btn')
+const addBtn= document.querySelector('.add-btn')
+const contactBtn= document.querySelector('.contact-btn')
