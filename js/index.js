@@ -126,4 +126,4 @@ homeBtn.addEventListener('click', () => {
 // Display date method
 const today = new Date();
 const dateTime = document.querySelector('.date');
-dateTime.innerHTML = today;
+dateTime.innerHTML = today.toLocaleString(dateTime.DATETIME_FULL_WITH_SECONDS);
