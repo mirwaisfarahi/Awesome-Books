@@ -6,6 +6,11 @@ body {
 
 /* Nav Bar Style */
 
+.first-heading {
+  text-decoration: none;
+  color: #2c2c2c;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -21,6 +26,8 @@ nav {
 
 .nav-link {
   text-decoration: none;
+  font-size: 18px;
+  color: #2c2c2c;
 }
 
 h1,
@@ -132,4 +139,10 @@ h3 span {
 
 .add-book-heading {
   display: none;
+}
+
+.date {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
 }

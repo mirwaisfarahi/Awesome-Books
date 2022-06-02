@@ -122,3 +122,7 @@ homeBtn.addEventListener('click', () => {
   document.querySelector('.add-book').style.display = 'none';
   document.querySelector('.contact-section').style.display = 'none';
 });
+
+//Display date method
+const today = new Date();
+document.querySelector('.date').innerHTML = today;
