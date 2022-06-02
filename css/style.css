@@ -2,13 +2,17 @@ body {
   font-family: sans-serif;
   color: #444;
   letter-spacing: 1px;
+  padding: 0;
+  margin: 1px;
+  font-weight: bold;
 }
 
 /* Nav Bar Style */
 
-.first-heading {
+.logo {
   text-decoration: none;
-  color: #2c2c2c;
+  color: #444;
+  font-size: 18px;
 }
 
 nav {
@@ -16,7 +20,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   border: 2px solid rgb(99, 99, 99);
-  padding: 5px 15px;
+  padding: 5px 10%;
 }
 
 .nav-items {
@@ -27,18 +31,27 @@ nav {
 .nav-link {
   text-decoration: none;
   font-size: 18px;
-  color: #2c2c2c;
+  color: #444;
 }
 
-h1,
-h2 {
-  font-weight: normal;
+.date {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2% 10% 5% 0;
 }
+
+/* Book Section */
 
 #wrapper {
-  width: 50%;
+  width: 60%;
+  height: 100%;
+  min-height: 69vh;
   max-width: 960px;
   margin: 20px auto;
+}
+
+.list-heading {
+  text-align: center;
 }
 
 #book-list {
@@ -100,7 +113,7 @@ h2 {
   font-size: 16px;
   border-radius: 4px 0 0 4px;
   box-sizing: border-box;
-  width: 300px;
+  width: 100%;
   float: left;
   clear: both;
 }
@@ -119,16 +132,8 @@ h2 {
 }
 
 footer {
-  max-width: 960px;
-  margin: 20px auto;
   border: 2px solid rgb(99, 99, 99);
-  padding: 5px 15px;
-}
-
-h3 span {
-  font-weight: 500;
-  font-size: 16px;
-  font-style: italic;
+  text-align: center;
 }
 
 .contact-section {
@@ -139,10 +144,4 @@ h3 span {
 
 .add-book-heading {
   display: none;
-}
-
-.date {
-  padding: 15px;
-  display: flex;
-  justify-content: flex-end;
 }
