@@ -85,11 +85,11 @@ bookForm.addEventListener('submit', (e) => {
   Methods.add(title, author);
 });
 
-// Function to Hide sections 
-const listBtn= document.querySelector('.list-btn');
-const addBtn= document.querySelector('.add-btn');
-const contactBtn= document.querySelector('.contact-btn');
-const homeBtn= document.querySelector('.title');
+// Function to Hide sections
+const listBtn = document.querySelector('.list-btn');
+const addBtn = document.querySelector('.add-btn');
+const contactBtn = document.querySelector('.contact-btn');
+const homeBtn = document.querySelector('.title');
 
 listBtn.addEventListener('click', () => {
   document.querySelector('.list-heading').style.display = 'block';
@@ -99,8 +99,10 @@ listBtn.addEventListener('click', () => {
 });
 
 addBtn.addEventListener('click', () => {
-  document.querySelector('.add-book').style.display = 'flex';
   document.querySelector('.add-book-heading').style.display = 'block';
+  document.querySelector('.add-book').style.display = 'flex';
+  document.querySelector('.add-book').style.flexDirection = 'column';
+  document.querySelector('.add-book').style.alignItems = 'center';
   document.querySelector('.add-book-form').style.display = 'flex';
   document.querySelector('.list-heading').style.display = 'none';
   document.querySelector('.booklist').style.display = 'none';
@@ -112,7 +114,7 @@ contactBtn.addEventListener('click', () => {
   document.querySelector('.booklist').style.display = 'none';
   document.querySelector('.add-book').style.display = 'none';
   document.querySelector('.list-heading').style.display = 'none';
-})
+});
 
 homeBtn.addEventListener('click', () => {
   document.querySelector('.list-heading').style.display = 'block';
